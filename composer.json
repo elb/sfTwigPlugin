@@ -1,0 +1,16 @@
+{
+    "name": "onceit/sf-twig-plugin",
+    "type": "symfony1-plugin",
+    "description": "Twig templating for symfony",
+    "require": {
+        "composer/installers": "~1.0",
+        "twig/twig": "~1.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Onceit",
+            "email": "hi@onceit.co.nz"
+        }
+    ]
+}
