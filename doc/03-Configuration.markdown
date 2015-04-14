@@ -12,6 +12,8 @@ Settings
 
 An `sf_twig_options` setting has been added to pass options to the `Twig_Environment` constructor.
 
+An `sf_twig_paths` setting has been added to pass additional directory paths to find templates in.
+
 An `sf_twig_extensions` setting has been added to `settings.yml` that holds an
 array of `Twig_Extension` classes. `sfTwigView` takes all those names and
 tries to initiate them into `Twig_Environment::addExtension()`. If it cannot
