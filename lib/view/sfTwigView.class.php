@@ -36,7 +36,7 @@ class sfTwigView extends sfPHPView
   /**
    * @var string Extension used by twig templates. which is .html
    */
-  protected $extension = '.html';
+  protected $extension = '.twig';
 
   /**
    * Loads the Twig instance and registers the autoloader.
@@ -58,7 +58,7 @@ class sfTwigView extends sfPHPView
     if ($this->twig->isDebug())
     {
       $this->twig->enableAutoReload();
-      $this->twig->setCache(null);
+      $this->twig->setCache(false);
     }
 
     $this->loadExtensions();
@@ -80,7 +80,7 @@ class sfTwigView extends sfPHPView
   protected function loadExtensions()
   {
     // should be replaced with sf_twig_standard_extensions
-    $prefixes = array_merge(array('Helper', 'Url', 'Asset', 'Tag', 'Escaping', 'Partial', 'I18N'), sfConfig::get('sf_standard_helpers'));
+    $prefixes = array_merge(array('Helper', 'Url', 'Asset', 'Tag', 'Escaping', 'I18N'), sfConfig::get('sf_standard_helpers'));
 
     foreach ($prefixes as $prefix)
     {
@@ -120,7 +120,11 @@ class sfTwigView extends sfPHPView
       $this->dispatcher->notify(new sfEvent($this, 'application.log', array(sprintf('Render "%s"', $file))));
     }
 
-    $this->loader->setPaths(array_merge((array) realpath(dirname($file)), $this->configuration->getDecoratorDirs()));
+    $this->loader->setPaths(array_merge(
+        (array) realpath(dirname($file)),
+        $this->configuration->getDecoratorDirs(),
+        sfConfig::get('sf_twig_paths', array())
+    ));
 
     $event = $this->dispatcher->filter(new sfEvent($this, 'template.filter_parameters'), $this->attributeHolder->getAll());
 

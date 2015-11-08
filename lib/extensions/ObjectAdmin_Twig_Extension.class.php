@@ -21,10 +21,10 @@ class ObjectAdmin_Twig_Extension extends Twig_Extension
   public function getFunctions()
   {
     return array(
-      'object_admin_input_file_tag' => array('object_admin_input_file_tag', false),
-      'object_admin_double_list'    => array('object_admin_double_list', false),
-      'object_admin_select_list'    => array('object_admin_select_list', false),
-      'object_admin_check_list'     => array('object_admin_check_list', false),
+      new Twig_SimpleFunction('object_admin_input_file_tag', 'object_admin_input_file_tag'),
+      new Twig_SimpleFunction('object_admin_double_list', 'object_admin_double_list'),
+      new Twig_SimpleFunction('object_admin_select_list', 'object_admin_select_list'),
+      new Twig_SimpleFunction('object_admin_check_list', 'object_admin_check_list'),
     );
   }
 

@@ -21,11 +21,11 @@ class I18N_Twig_Extension extends Twig_Extension
   public function getFunctions()
   {
     return array(
-      '__'                   => new Twig_Function_Function('__'),
-      't'                    => new Twig_Function_Function('__'),
-      'format_number_choice' => new Twig_Function_Function('format_number_choice'),
-      'format_country'       => new Twig_Function_Function('format_country'),
-      'format_language'      => new Twig_Function_Function('format_language'),
+      new Twig_SimpleFunction('__', '__'),
+      new Twig_SimpleFunction('t', '__'),
+      new Twig_SimpleFunction('format_number_choice', 'format_number_choice'),
+      new Twig_SimpleFunction('format_country', 'format_country'),
+      new Twig_SimpleFunction('format_language', 'format_language'),
     );
   }
 

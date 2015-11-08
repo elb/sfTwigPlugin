@@ -21,14 +21,14 @@ class Tag_Twig_Extension extends Twig_Extension
   public function getFunctions()
   {
     return array(
-      'tag'                    => new Twig_Function_Function('tag'),
-      'content_tag'            => new Twig_Function_Function('content_tag'),
-      'cdata_section'          => new Twig_Function_Function('cdata_section'),
-      'comment_as_conditional' => new Twig_Function_Function('comment_as_conditional'),
-      'escape_javascript'      => new Twig_Function_Function('escape_javascript'),
-      'escape_once'            => new Twig_Function_Function('escape_once'),
-      'fix_double_escape'      => new Twig_Function_Function('fix_double_escape'),
-      'get_id_from_name'       => new Twig_Function_Function('get_id_from_name'),
+      new Twig_SimpleFunction('tag', 'tag'),
+      new Twig_SimpleFunction('content_tag', 'content_tag'),
+      new Twig_SimpleFunction('cdata_section', 'cdata_section'),
+      new Twig_SimpleFunction('comment_as_conditional', 'comment_as_conditional'),
+      new Twig_SimpleFunction('escape_javascript', 'escape_javascript'),
+      new Twig_SimpleFunction('escape_once', 'escape_once'),
+      new Twig_SimpleFunction('fix_double_escape', 'fix_double_escape'),
+      new Twig_SimpleFunction('get_id_from_name', 'get_id_from_name'),
     );
   }
 

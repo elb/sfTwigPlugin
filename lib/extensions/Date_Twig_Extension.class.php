@@ -21,11 +21,11 @@ class Date_Twig_Extension extends Twig_Extension
   public function getFunctions()
   {
     return array(
-      'format_daterange'          => new Twig_Function_Function('format_daterange'),
-      'format_date'               => new Twig_Function_Function('format_date'),
-      'format_datetime'           => new Twig_Function_Function('format_datetime'),
-      'distance_of_time_in_words' => new Twig_Function_Function('distance_of_time_in_words'),
-      'time_ago_in_words'         => new Twig_Function_Function('time_ago_in_words'),
+      new Twig_SimpleFunction('format_daterange', 'format_daterange'),
+      new Twig_SimpleFunction('format_date', 'format_date'),
+      new Twig_SimpleFunction('format_datetime', 'format_datetime'),
+      new Twig_SimpleFunction('distance_of_time_in_words', 'distance_of_time_in_words'),
+      new Twig_SimpleFunction('time_ago_in_words', 'time_ago_in_words'),
     );
   }
 

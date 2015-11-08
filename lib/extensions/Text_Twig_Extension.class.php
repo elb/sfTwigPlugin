@@ -21,13 +21,13 @@ class Text_Twig_Extension extends Twig_Extension
   public function getFunctions()
   {
     return array(
-      'truncate_text'      => new Twig_Function_Function('truncate_text'),
-      'highlight_text'     => new Twig_Function_Function('highlight_text'),
-      'excerpt_text'       => new Twig_Function_Function('excerpt_text'),
-      'wrap_text'          => new Twig_Function_Function('wrap_text'),
-      'simple_format_text' => new Twig_Function_Function('simple_format_text'),
-      'auto_link_text'     => new Twig_Function_Function('auto_link_text'),
-      'strip_links_text'   => new Twig_Function_Function('strip_links_text'),
+      new Twig_SimpleFunction('truncate_text', 'truncate_text'),
+      new Twig_SimpleFunction('highlight_text', 'highlight_text'),
+      new Twig_SimpleFunction('excerpt_text', 'excerpt_text'),
+      new Twig_SimpleFunction('wrap_text', 'wrap_text'),
+      new Twig_SimpleFunction('simple_format_text', 'simple_format_text'),
+      new Twig_SimpleFunction('auto_link_text', 'auto_link_text'),
+      new Twig_SimpleFunction('strip_links_text', 'strip_links_text'),
     );
   }
 

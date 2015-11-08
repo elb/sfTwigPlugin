@@ -21,8 +21,8 @@ class Validation_Twig_Extension extends Twig_Extension
   public function getFunctions()
   {
     return array(
-      'form_has_error' => array('form_has_error', false),
-      'form_error'     => array('form_error', false),
+      new Twig_SimpleFunction('form_has_error', 'form_has_error'),
+      new Twig_SimpleFunction('form_error', 'form_error'),
     );
   }
 

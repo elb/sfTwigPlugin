@@ -11,7 +11,7 @@
 
 /**
  * sfTwigPlugin configuration.
- * 
+ *
  * @package    sfTwigPlugin
  * @subpackage config
  * @author     Henrik Bjornskov <henrik@bearwoods.dk>
@@ -20,13 +20,5 @@
 class sfTwigPluginConfiguration extends sfPluginConfiguration
 {
   const VERSION = '0.1.4-DEV';
-    
-  /**
-   * @see sfPluginConfiguration
-   */
-  public function configure()
-  {
-    require_once sfConfig::get('sf_twig_lib_dir', dirname(__FILE__).'/../lib/vendor/Twig/lib').'/Twig/Autoloader.php';
-    Twig_Autoloader::register();
-  }
+
 }

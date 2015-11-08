@@ -21,11 +21,11 @@ class Escaping_Twig_Extension extends Twig_Extension
   public function getFunctions()
   {
     return array(
-      'esc_entities'       => new Twig_Function_Function('esc_entities'),
-      'esc_specialchars'   => new Twig_Function_Function('esc_specialchars'),
-      'esc_raw'            => new Twig_Function_Function('esc_raw'),
-      'esc_js'             => new Twig_Function_Function('esc_js'),
-      'esc_js_no_entities' => new Twig_Function_Function('esc_js_no_entities'),
+      new Twig_SimpleFunction('esc_entities', 'esc_entities'),
+      new Twig_SimpleFunction('esc_specialchars', 'esc_specialchars'),
+      new Twig_SimpleFunction('esc_raw', 'esc_raw'),
+      new Twig_SimpleFunction('esc_js', 'esc_js'),
+      new Twig_SimpleFunction('esc_js_no_entities', 'esc_js_no_entities'),
     );
   }
 
